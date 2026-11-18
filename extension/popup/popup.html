@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Phishing URL Classifier</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon-32.png" alt="" width="20" height="20">
+    <h1>Phishing URL Classifier</h1>
+    <a id="options" href="#" title="Settings">Settings</a>
+  </header>
+
+  <section id="current" aria-live="polite">
+    <div class="result" id="current-result">
+      <p class="muted">Checking this page…</p>
+    </div>
+    <button id="trust" type="button" hidden>Trust this site</button>
+  </section>
+
+  <section id="manual">
+    <h2>Check a link</h2>
+    <form id="check-form">
+      <input id="check-input" type="text" placeholder="Paste a URL, e.g. https://paypa1.com/login" autocomplete="off" spellcheck="false" aria-label="URL to check">
+      <button type="submit">Check</button>
+    </form>
+    <div class="result" id="check-result"></div>
+  </section>
+
+  <footer class="muted" id="age-note"></footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

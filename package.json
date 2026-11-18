@@ -1,0 +1,14 @@
+{
+  "name": "phishing-url-classifier",
+  "version": "0.1.0",
+  "description": "Manifest V3 browser extension that scores URLs for phishing risk with on-device heuristics.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "build": "node scripts/build.mjs",
+    "score": "node scripts/score.mjs"
+  }
+}

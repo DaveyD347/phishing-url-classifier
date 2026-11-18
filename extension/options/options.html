@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Phishing URL Classifier · Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Phishing URL Classifier</h1>
+    <p class="muted">All scoring runs locally in your browser. Nothing leaves your machine unless you turn on domain-age lookup below.</p>
+
+    <fieldset>
+      <legend>Protection</legend>
+      <label><input type="checkbox" id="highlightLinks"> Outline risky links on pages and explain them on hover</label>
+      <label><input type="checkbox" id="warnOnDangerous"> Show a warning banner on likely phishing pages</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Network lookups</legend>
+      <label><input type="checkbox" id="domainAgeLookup"> Look up domain age (RDAP)</label>
+      <p class="hint">Newly registered domains are a strong phishing signal. When on, the <em>domain name only</em>
+        (for example <code>example.com</code>, never the full URL) of pages you visit is sent to
+        <code>rdap.org</code>, which forwards it to the registry. Results are cached for 7 days.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Trusted sites</legend>
+      <p class="hint flush">One domain per line. Sites on this list are never flagged.</p>
+      <textarea id="allowlist" rows="8" spellcheck="false" placeholder="intranet.example.com"></textarea>
+    </fieldset>
+
+    <div class="actions">
+      <button id="save" type="button">Save</button>
+      <span id="status" role="status"></span>
+    </div>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
